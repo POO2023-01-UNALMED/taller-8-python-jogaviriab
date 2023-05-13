@@ -3,14 +3,13 @@ from persona import Persona
 
 class Futbolista(Persona,Deportista):
     listaFutbolista = []
-    def __init__(self,nombre=None,edad=None,altura=None,sexo=None,añosPracticado=None,golesMarcados=None,tarjetasRojas=None,piernaHabil=None):
+    def __init__(self,nombre,edad,altura,sexo,añosPracticado,golesMarcados,tarjetasRojas,piernaHabil):
         self._golesMarcados= golesMarcados
         self._tarjetasRojas = tarjetasRojas
         self._piernaHabil = piernaHabil
-        persona = Persona().__init__(self,nombre,edad,altura,sexo)
-        deporte = Deportista().__init__(self,añosPracticado)
-        if(deporte.getNombre == "Futbol"):
-            Futbolista.listaFutbolista.append(persona)
+        Persona().__init__(self,nombre,edad,altura,sexo)
+        Deportista().__init__(self,añosPracticado)
+        Futbolista.listaFutbolista.append(self)
     
     def getGolesMarcados(self):
         return self._golesMarcados
