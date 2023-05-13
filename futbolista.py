@@ -7,8 +7,8 @@ class Futbolista(Persona,Deportista):
         self._golesMarcados= golesMarcados
         self._tarjetasRojas = tarjetasRojas
         self._piernaHabil = piernaHabil
-        persona = Persona().__init__(nombre,edad,altura,sexo)
-        deporte = Deportista().__init__(añosPracticado)
+        persona = Persona().__init__(self,nombre,edad,altura,sexo)
+        deporte = Deportista().__init__(self,añosPracticado)
         if(deporte.getNombre == "Futbol"):
             Futbolista.listaFutbolista.append(persona)
     
